@@ -1,5 +1,30 @@
+const passport = require("passport");
 const UserService = require("../services/UserService");
 const LoggerHttp = require("../utils/logger").http;
+const passport = require("passport");
+
+// la fonction pour gerer l'authentificationdepuis passport
+module.exports.loginUser = function (req, res, next) {
+  passport.authenticate(
+    "Login",
+    { badRequestMessage: "les chams sont manquants." },
+    async function (err, user) {
+      if (err) {
+        console.log(err);
+        return res.send("ERROR");
+      }
+      req.logIn(user, async function (err) {
+        if (err) {
+          console.log(err);
+          return res.send("ERROR LOG");
+        } else {
+          console.log(user);
+          return res.send("L");
+        }
+      });
+    }
+  )(req, res, next);
+};
 
 // La fonction permet d'ajouter un utilisateur
 module.exports.addOneUser = function (req, res) {

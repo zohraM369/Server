@@ -11,6 +11,12 @@ const app = express();
 // Démarrage de la database
 require("./utils/database");
 
+// ajout de module de login
+const passport = require("./utils/passport");
+/*  passport init  */
+app.use(passport.initialize());
+// app.use(passort.session())
+
 // Déclaration des controllers pour l'utilisateur
 const UserController = require("./controllers/UserController");
 
@@ -22,6 +28,9 @@ const LoggerMiddleware = require("./middlewares/logger");
 app.use(bodyParser.json(), LoggerMiddleware.addLogger);
 
 /*--------------------- Création des routes (User - Utilisateur) ---------------------*/
+
+// création du endpoint /login pour connecter un utilisateur
+app.post("/login", DatabaseMiddleware.checkConnexion, UserController.loginUser);
 
 // Création du endpoint /user pour l'ajout d'un utilisateur
 app.post("/user", DatabaseMiddleware.checkConnexion, UserController.addOneUser);
