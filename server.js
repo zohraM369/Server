@@ -85,6 +85,81 @@ app.delete(
   UserController.deleteManyUsers
 );
 
+/*--------------------- Création des routes (article ) ---------------------*/
+
+// Déclaration des controllers pour l'utilisateur
+const ArticleController = require("./controllers/ArticleController");
+
+// Création du endpoint /article pour l'ajout d'un utilisateur
+app.post(
+  "/article",
+  DatabaseMiddleware.checkConnexion,
+  ArticleController.addOneArticle
+);
+
+// Création du endpoint /article pour l'ajout de plusieurs utilisateurs
+app.post(
+  "/articles",
+  DatabaseMiddleware.checkConnexion,
+  ArticleController.addManyArticles
+);
+
+// Création du endpoint /article pour la récupération d'un utilisateur par le champ selectionné
+app.get(
+  "/article",
+  DatabaseMiddleware.checkConnexion,
+  ArticleController.findOneArticle
+);
+
+// Création du endpoint /article pour la récupération d'un utilisateur via l'id
+app.get(
+  "/article/:id",
+  DatabaseMiddleware.checkConnexion,
+  ArticleController.findOneArticleById
+);
+
+// Création du endpoint /article pour la récupération de plusieurs utilisateurs
+app.get(
+  "/articles_by_filter",
+  DatabaseMiddleware.checkConnexion,
+  ArticleController.findManyArticles
+);
+
+// Création du endpoint /article pour la récupération de plusieurs utilisateurs via l'idS
+app.get(
+  "/articles",
+  DatabaseMiddleware.checkConnexion,
+  ArticleController.findManyArticlesById
+);
+
+// Création du endpoint /article pour la modification d'un utilisateur
+app.put(
+  "/article/:id",
+  DatabaseMiddleware.checkConnexion,
+  ArticleController.updateOneArticle
+);
+
+// Création du endpoint /article pour la modification de plusieurs utilisateurs
+app.put(
+  "/articles",
+  DatabaseMiddleware.checkConnexion,
+  ArticleController.updateManyArticles
+);
+
+// Création du endpoint /article pour la suppression d'un utilisateur
+app.delete(
+  "/article/:id",
+  DatabaseMiddleware.checkConnexion,
+  ArticleController.deleteOneArticle
+);
+
+// Création du endpoint /article pour la suppression de plusieurs utilisateurs
+app.delete(
+  "/articles",
+  DatabaseMiddleware.checkConnexion,
+  ArticleController.deleteManyArticles
+);
+
 // 2e chose à faire : Créer le server avec app.listen
 app.listen(Config.port, () => {
   Logger.info(`Serveur démarré sur le port ${Config.port}.`);
