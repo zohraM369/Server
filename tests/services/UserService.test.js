@@ -14,6 +14,7 @@ describe("addOneUser", () => {
       email: "edouard.dupont1@gmail.com",
       user_id: "6683f5eadedd93df338784da",
       username: "edupont1",
+      password: "12345",
     };
     UserService.addOneUser(user, null, function (err, value) {
       expect(value).to.be.a("object");
@@ -28,6 +29,7 @@ describe("addOneUser", () => {
       lastName: "Dupont",
       email: "edouard.dupont2@gmail.com",
       username: "edupont2",
+      password: "12345",
     };
     UserService.addOneUser(user_no_valid, function (err, value) {
       expect(err).to.haveOwnProperty("msg");
@@ -49,6 +51,7 @@ describe("addManyUsers", () => {
         lastName: "Dupont",
         email: "edouard.dupont3@gmail.com",
         username: "edupont3",
+        password: "12345",
       },
       {
         firstName: "Edouard",
@@ -57,6 +60,7 @@ describe("addManyUsers", () => {
         username: "",
         testing: true,
         phone: "0645102340",
+        password: "12345",
       },
       {
         firstName: "Edouard",
@@ -65,10 +69,12 @@ describe("addManyUsers", () => {
         username: "edupont4",
         testing: true,
         phone: "0645102340",
+        password: "12345",
       },
       {
         firstName: "Edouard",
         email: "edouard.dupont6@gmail.com",
+        password: "12345",
       },
     ];
 
@@ -83,6 +89,7 @@ describe("addManyUsers", () => {
         lastName: "Dupont",
         email: "edouard.dupont7@gmail.com",
         username: "edupont5",
+        password: "12345",
       },
       {
         firstName: "Jordan",
@@ -91,6 +98,7 @@ describe("addManyUsers", () => {
         username: "La",
         testing: true,
         phone: "0645102340",
+        password: "12345",
       },
       {
         firstName: "Mathis",
@@ -99,6 +107,7 @@ describe("addManyUsers", () => {
         username: "edupont6",
         testing: true,
         phone: "0645102340",
+        password: "12345",
       },
     ];
 

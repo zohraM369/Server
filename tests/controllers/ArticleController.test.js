@@ -15,6 +15,7 @@ let users = [
     lastName: "iencli",
     username: "oui1",
     email: "iencli1@gmail.com",
+    password: "12345",
   },
 
   {
@@ -22,6 +23,7 @@ let users = [
     lastName: "iencli",
     username: "oui2",
     email: "iencli2@gmail.com",
+    password: "12345",
   },
 
   {
@@ -29,6 +31,7 @@ let users = [
     lastName: "iencil",
     username: "oui3",
     email: "iencli3@gmail.com",
+    password: "12345",
   },
 
   {
@@ -36,6 +39,7 @@ let users = [
     lastName: "iencli",
     username: "oui4",
     email: "iencli4@gmail.com",
+    password: "12345",
   },
 ];
 

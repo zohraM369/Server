@@ -24,6 +24,13 @@ const UserSchema = mongoose.Schema({
     required: true,
   },
   phone: String,
+  password: {
+    type: String,
+    required: true,
+  },
+  token: {
+    type: String,
+  },
 });
 
 module.exports = UserSchema;

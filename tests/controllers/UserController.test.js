@@ -19,6 +19,7 @@ describe("POST - /user", () => {
         lastName: "Us",
         username: "dwarfSlayer",
         email: "lutfu.us@gmail.com",
+        password: "12345",
       })
       .end((err, res) => {
         expect(res).to.have.status(201);
@@ -34,6 +35,7 @@ describe("POST - /user", () => {
         lastName: "Us",
         username: "dwarfSlayr",
         email: "lutfu.us@gmil.com",
+        password: "12345",
       })
       .end((err, res) => {
         expect(res).to.have.status(405);
@@ -49,6 +51,7 @@ describe("POST - /user", () => {
         lastName: "Us",
         username: "dwarfSlayer",
         email: "lutfu.us@gmai.com",
+        password: "12345",
       })
       .end((err, res) => {
         expect(res).to.have.status(405);
@@ -64,6 +67,7 @@ describe("POST - /user", () => {
         lastName: "",
         username: "dwarfSlaye",
         email: "lufu.us@gmai.com",
+        password: "12345",
       })
       .end((err, res) => {
         expect(res).to.have.status(405);
@@ -83,6 +87,7 @@ describe("POST - /users", () => {
           lastName: "Us",
           username: "dwathttvrfSlayer",
           email: "lutfgfbu.us@gmail.com",
+          password: "12345",
         },
 
         {
@@ -90,6 +95,7 @@ describe("POST - /users", () => {
           lastName: "Us",
           username: "dwgfbarfSlayer",
           email: "lutgbffu.us@gmail.com",
+          password: "12345",
         },
       ])
       .end((err, res) => {
